@@ -56,9 +56,73 @@
   h1,
   h2,
   h3 {
-    @apply font-display font-bold;
+    font-family: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+    font-weight: 700;
   }
   section[id] {
     scroll-margin-top: 5rem;
+  }
+}
+
+/*
+ * Classes da marca declaradas direto no CSS, para funcionarem mesmo se o servidor
+ * de desenvolvimento não recarregar o tailwind.config.ts.
+ */
+@layer utilities {
+  .bg-marinho {
+    background-color: hsl(var(--marinho));
+  }
+  .text-marinho {
+    color: hsl(var(--marinho));
+  }
+  .border-marinho {
+    border-color: hsl(var(--marinho));
+  }
+  .bg-ceu {
+    background-color: hsl(var(--ceu));
+  }
+  .bg-rosa {
+    background-color: hsl(var(--rosa));
+  }
+  .bg-rosa-claro {
+    background-color: hsl(var(--rosa-claro));
+  }
+  .bg-papel {
+    background-color: hsl(var(--papel));
+  }
+  .font-display {
+    font-family: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+  }
+
+  /* fundo do topo */
+  .hero-dots {
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+  }
+  .animate-float {
+    animation: float 7s ease-in-out infinite;
+  }
+  .animate-float-delayed {
+    animation: float 9s ease-in-out -3s infinite;
+  }
+  .animate-float-slow {
+    animation: float 14s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-float-delayed,
+    .animate-float-slow {
+      animation: none;
+    }
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
   }
 }

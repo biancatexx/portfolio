@@ -14,6 +14,7 @@ export default function Projects() {
     <section className="py-16">
       <div className="container">
         <SectionTitle
+          eyebrow="Portfólio"
           title="Todos os projetos"
           description="Uma seleção de trabalhos que desenvolvi. Clique em um projeto para ver os detalhes."
         />
@@ -31,7 +32,7 @@ export default function Projects() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
+            <ProjectCard key={p.slug} project={p} index={projects.indexOf(p)} />
           ))}
         </div>
       </div>

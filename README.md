@@ -13,7 +13,7 @@ npm run preview  # serve o build
 
 ## Onde editar
 
-- **Conteúdo** (textos, serviços, trajetória, certificações, projetos, contato): `src/data/profile.ts`. Os trechos com `[EDITAR]` ainda precisam ser preenchidos.
+- **Conteúdo** (sobre, competências, experiências, formação, certificações, projetos, contato): `src/data/profile.ts`. Os trechos com `[EDITAR]` ainda precisam ser preenchidos.
 - **Cores da marca**: variáveis em `src/index.css` (marinho, céu, rosa, rosa claro, papel). No Tailwind: `bg-marinho`, `bg-ceu`, `bg-rosa`, `bg-rosa-claro`, `bg-papel`.
 - **Fontes**: Bricolage Grotesque Bold (títulos, classe `font-display`) e DM Sans (textos), carregadas em `index.html`.
 - **Logo**: `src/components/logo.tsx`. Sempre uma só cor: marinho em fundo claro, branco em fundo escuro.
@@ -21,6 +21,6 @@ npm run preview  # serve o build
 
 ## Páginas
 
-- `/` — apresentação, serviços, projetos (quando houver), trajetória e contato
+- `/` — apresentação, sobre e competências, experiência, formação, certificações, projetos em destaque e contato
 - `/projetos` — todos os projetos com filtro por tag
 - `/projetos/:slug` — detalhe de um projeto
