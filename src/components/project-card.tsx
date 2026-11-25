@@ -8,8 +8,8 @@ import type { Project } from "@/data/profile";
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link to={`/projetos/${project.slug}`} className="group block h-full">
-      <Card className="flex h-full flex-col transition-all group-hover:-translate-y-1 group-hover:border-primary/50 group-hover:shadow-md">
-        <div className="aspect-video rounded-t-lg bg-gradient-to-br from-primary/20 via-accent to-secondary" />
+      <Card className="flex h-full flex-col transition-all group-hover:-translate-y-1 group-hover:border-primary/50">
+        <div className="aspect-video rounded-t-lg bg-secondary" />
         <CardHeader>
           <CardTitle className="flex items-center justify-between gap-2 text-lg">
             {project.title}

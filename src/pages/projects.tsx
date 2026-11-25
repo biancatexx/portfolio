@@ -14,7 +14,6 @@ export default function Projects() {
     <section className="py-16">
       <div className="container">
         <SectionTitle
-          eyebrow="Portfólio"
           title="Todos os projetos"
           description="Uma seleção de trabalhos que desenvolvi. Clique em um projeto para ver os detalhes."
         />

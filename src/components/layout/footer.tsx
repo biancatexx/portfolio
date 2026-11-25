@@ -1,27 +1,17 @@
-import { SocialIcon } from "@/components/social-icon";
+import { LogoMark } from "@/components/logo";
 import { profile } from "@/data/profile";
 
 export function Footer() {
   return (
-    <footer className="border-t">
-      <div className="container flex flex-col items-center justify-between gap-4 py-8 text-sm text-muted-foreground sm:flex-row">
-        <p>
-          © {new Date().getFullYear()} {profile.name}. Todos os direitos reservados.
-        </p>
-        <div className="flex gap-4">
-          {profile.socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={s.label}
-              className="transition-colors hover:text-foreground"
-            >
-              <SocialIcon icon={s.icon} className="h-5 w-5" />
-            </a>
-          ))}
+    <footer className="bg-marinho text-white">
+      <div className="container flex flex-col items-center justify-between gap-4 border-t border-white/10 py-8 text-sm sm:flex-row">
+        <div className="flex items-center gap-3">
+          <LogoMark className="h-6" />
+          <span className="text-white/80">{profile.tagline}</span>
         </div>
+        <p className="text-white/70">
+          © {new Date().getFullYear()} {profile.name} · {profile.location}
+        </p>
       </div>
     </footer>
   );

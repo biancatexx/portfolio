@@ -2,19 +2,25 @@ import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
 
 export default {
-  darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     container: {
       center: true,
       padding: "1.5rem",
-      screens: { "2xl": "1200px" },
+      screens: { "2xl": "1120px" },
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+        display: ["Bricolage Grotesque", "DM Sans", "system-ui", "sans-serif"],
       },
       colors: {
+        // cores da marca (ver src/index.css)
+        marinho: "hsl(var(--marinho))",
+        ceu: "hsl(var(--ceu))",
+        rosa: { DEFAULT: "hsl(var(--rosa))", claro: "hsl(var(--rosa-claro))" },
+        papel: "hsl(var(--papel))",
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -30,8 +36,8 @@ export default {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius) - 4px)",
+        sm: "calc(var(--radius) - 6px)",
       },
     },
   },

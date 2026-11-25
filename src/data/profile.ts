@@ -1,6 +1,8 @@
 /**
  * Todo o conteúdo do portfólio fica aqui.
- * Os trechos marcados com [EDITAR] são exemplos: troque pelos dados reais do seu LinkedIn.
+ * Fontes: perfil do LinkedIn e guia de identidade visual. Trechos com [EDITAR] ainda precisam de você.
+ *
+ * Tom de voz da marca: curiosa, clara (frases curtas, sem jargão) e inovadora (mostra o porquê).
  */
 
 export type SocialLink = {
@@ -9,19 +11,21 @@ export type SocialLink = {
   icon: "linkedin" | "github" | "mail";
 };
 
-export type Experience = {
-  role: string;
-  company: string;
-  period: string;
-  location?: string;
+export type Service = {
+  title: string;
   description: string;
-  highlights: string[];
 };
 
-export type Education = {
-  course: string;
-  institution: string;
+export type TimelineItem = {
   period: string;
+  title: string;
+  place: string;
+};
+
+export type Certification = {
+  name: string;
+  issuer: string;
+  date: string;
 };
 
 export type Project = {
@@ -36,87 +40,51 @@ export type Project = {
 
 export const profile = {
   name: "Bianca Teixeira",
-  initials: "BT",
-  role: "Desenvolvedora de Software", // [EDITAR] seu título do LinkedIn
-  location: "Brasil", // [EDITAR] cidade, estado
-  headline:
-    "Construo produtos digitais com foco em código limpo, boa experiência de uso e entrega de valor.", // [EDITAR]
-  about: [
-    // [EDITAR] cole aqui o "Sobre" do LinkedIn, um parágrafo por item
-    "Sou desenvolvedora com experiência em criar aplicações web modernas, do planejamento à publicação. Gosto de transformar problemas de negócio em soluções simples e bem construídas.",
-    "Trabalho bem em equipe, valorizo comunicação clara e estou sempre aprendendo novas tecnologias e boas práticas.",
-  ],
-  email: "seu-email@exemplo.com", // [EDITAR]
-  resumeUrl: "", // [EDITAR] link para o currículo em PDF (deixe vazio para esconder o botão)
+  role: "UX/UI Designer · Front-end",
+  location: "Fortaleza, CE",
+  tagline: "Do desenho ao código.",
+  headline: "Experiências digitais, do desenho ao código.",
+  intro:
+    "Sou Bianca Teixeira, UX/UI Designer e front-end em Fortaleza. Gosto de projetos que trazem mudança e inovação.",
+  email: "", // [EDITAR] ex.: "contato@seudominio.com" (vazio = não aparece)
+  whatsapp: "", // [EDITAR] só números com DDI e DDD, ex.: "5585999999999" (vazio = não aparece)
+  linkedin: { label: "/in/biancatex", href: "https://www.linkedin.com/in/biancatex/" },
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/biancatex/", icon: "linkedin" },
-    { label: "GitHub", href: "https://github.com/", icon: "github" }, // [EDITAR]
   ] satisfies SocialLink[],
-  stats: [
-    // [EDITAR]
-    { value: "X+", label: "anos de experiência" },
-    { value: "X+", label: "projetos entregues" },
-    { value: "X", label: "empresas" },
-  ],
 };
 
-// [EDITAR] cole as competências do LinkedIn
-export const skills: { group: string; items: string[] }[] = [
-  { group: "Front-end", items: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS"] },
-  { group: "Back-end", items: ["Node.js", "APIs REST", "SQL"] },
-  { group: "Ferramentas", items: ["Git", "Vite", "Figma", "Scrum"] },
+export const services: Service[] = [
+  { title: "UX e pesquisa", description: "Pesquisa com usuários, arquitetura da informação e fluxos." },
+  { title: "UI e protótipos", description: "Telas e protótipos navegáveis para validar antes de construir." },
+  { title: "Front-end", description: "Interfaces implementadas com fidelidade ao design." },
+  { title: "Design systems", description: "Identidade, componentes e padrões para o produto crescer." },
 ];
 
-// [EDITAR] experiências do LinkedIn, da mais recente para a mais antiga
-export const experiences: Experience[] = [
-  {
-    role: "Cargo atual",
-    company: "Empresa atual",
-    period: "2023 - atual",
-    location: "Remoto",
-    description: "Resumo das suas responsabilidades nesta posição.",
-    highlights: ["Uma conquista com resultado mensurável", "Outra entrega relevante"],
-  },
-  {
-    role: "Cargo anterior",
-    company: "Empresa anterior",
-    period: "2021 - 2023",
-    description: "Resumo das suas responsabilidades nesta posição.",
-    highlights: ["Uma conquista com resultado mensurável"],
-  },
+export const timeline: TimelineItem[] = [
+  { period: "2020 — hoje", title: "UX/UI Designer", place: "Grupo Educacional Aqui Você Pode" },
+  { period: "2018 — 2019", title: "UX/UI Designer", place: "SuperAvaliação" },
+  { period: "2017 — 2018", title: "Desenvolvedora Web", place: "SuperAvaliação" },
+  { period: "2024", title: "Pós-graduação em Experiência do Usuário", place: "Anhanguera" },
+  { period: "2016 — 2023", title: "Sistemas para Internet", place: "UniGrande" },
 ];
 
-// [EDITAR] formação do LinkedIn
-export const education: Education[] = [
-  { course: "Nome do curso", institution: "Instituição", period: "Ano de início - Ano de conclusão" },
+// [EDITAR] o LinkedIn lista 11 certificações; o PDF mostrou só estas 2
+export const certifications: Certification[] = [
+  { name: "SEO para Iniciantes", issuer: "Mirago Marketing Digital", date: "2024" },
+  { name: "Arquitetura da informação e Projeto de sistemas", issuer: "TIM Brasil", date: "2019" },
 ];
 
-// [EDITAR] seus projetos
-export const projects: Project[] = [
-  {
-    slug: "projeto-um",
-    title: "Projeto Um",
-    summary: "Uma frase curta explicando o que o projeto resolve.",
-    description:
-      "Descrição completa do projeto: o problema, o que você fez, as decisões técnicas e o resultado alcançado.",
-    tags: ["React", "TypeScript"],
-    link: "",
-    repo: "",
-  },
-  {
-    slug: "projeto-dois",
-    title: "Projeto Dois",
-    summary: "Uma frase curta explicando o que o projeto resolve.",
-    description:
-      "Descrição completa do projeto: o problema, o que você fez, as decisões técnicas e o resultado alcançado.",
-    tags: ["Node.js", "API"],
-  },
-  {
-    slug: "projeto-tres",
-    title: "Projeto Três",
-    summary: "Uma frase curta explicando o que o projeto resolve.",
-    description:
-      "Descrição completa do projeto: o problema, o que você fez, as decisões técnicas e o resultado alcançado.",
-    tags: ["Tailwind CSS", "UI"],
-  },
-];
+/**
+ * [EDITAR] Cases do portfólio. Enquanto a lista estiver vazia, a seção e o link "Projetos" ficam escondidos.
+ * Exemplo:
+ * {
+ *   slug: "app-matriculas",
+ *   title: "App de matrículas",
+ *   summary: "Uma frase curta sobre o problema resolvido.",
+ *   description: "O desafio, o que você fez, as decisões e o resultado.",
+ *   tags: ["UX", "Pesquisa"],
+ *   link: "https://...",
+ * },
+ */
+export const projects: Project[] = [];

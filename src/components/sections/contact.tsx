@@ -1,38 +1,42 @@
-import { Mail } from "lucide-react";
+import { Linkedin, Mail, MessageCircle } from "lucide-react";
 
-import { SocialIcon } from "@/components/social-icon";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { profile } from "@/data/profile";
 
 export function Contact() {
+  const whatsappLabel = profile.whatsapp.replace(/^55(\d{2})(\d{4,5})(\d{4})$/, "($1) $2-$3");
+
   return (
-    <section id="contato" className="border-t py-20">
+    <section id="contato" className="bg-marinho py-16 text-white">
       <div className="container">
-        <Card className="overflow-hidden border-primary/30 bg-gradient-to-br from-primary/10 via-background to-background">
-          <CardContent className="flex flex-col items-center p-10 text-center sm:p-14">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">Contato</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Vamos conversar?</h2>
-            <p className="mt-4 max-w-lg text-muted-foreground">
-              Estou aberta a novas oportunidades, parcerias e projetos. Me mande uma mensagem e eu respondo assim que
-              possível.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button size="lg" asChild>
-                <a href={`mailto:${profile.email}`}>
-                  <Mail /> {profile.email}
-                </a>
-              </Button>
-              {profile.socials.map((s) => (
-                <Button key={s.label} size="lg" variant="outline" asChild>
-                  <a href={s.href} target="_blank" rel="noreferrer">
-                    <SocialIcon icon={s.icon} /> {s.label}
-                  </a>
-                </Button>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        <h2 className="max-w-2xl text-3xl tracking-tight sm:text-4xl">Vamos conversar sobre o seu projeto?</h2>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Button variant="rosa" size="lg" asChild>
+            <a href={profile.linkedin.href} target="_blank" rel="noreferrer">
+              <Linkedin /> LinkedIn {profile.linkedin.label}
+            </a>
+          </Button>
+        </div>
+
+        {(profile.email || profile.whatsapp) && (
+          <p className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-white/85">
+            {profile.email && (
+              <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 hover:text-white">
+                <Mail className="h-4 w-4" /> {profile.email}
+              </a>
+            )}
+            {profile.whatsapp && (
+              <a
+                href={`https://wa.me/${profile.whatsapp}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 hover:text-white"
+              >
+                <MessageCircle className="h-4 w-4" /> {whatsappLabel}
+              </a>
+            )}
+          </p>
+        )}
       </div>
     </section>
   );

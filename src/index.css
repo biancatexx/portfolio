@@ -2,51 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Paleta do site. Valores em HSL: matiz saturação luminosidade. */
+/*
+ * Identidade visual Bianca Teixeira. Valores em HSL: matiz saturação luminosidade.
+ *   Marinho     #14213D  221 51% 16%
+ *   Céu         #A9C8F0  214 70% 80%
+ *   Rosa        #F28CA8  344 80% 75%
+ *   Rosa claro  #FCE3E9  346 80% 94%
+ *   Papel       #F7F8FC  228 45% 98%
+ * Proporção: 60% papel, 25% marinho, 10% céu, 5% rosas.
+ * Rosa e céu são apoio: nunca use como cor de texto sobre fundo claro.
+ */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 260 30% 96%;
-    --secondary-foreground: 262 50% 25%;
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 42%;
-    --accent: 262 70% 95%;
-    --accent-foreground: 262 60% 35%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 262 83% 58%;
-    --radius: 0.75rem;
-  }
+    --marinho: 221 51% 16%;
+    --ceu: 214 70% 80%;
+    --rosa: 344 80% 75%;
+    --rosa-claro: 346 80% 94%;
+    --papel: 228 45% 98%;
 
-  .dark {
-    --background: 240 10% 6%;
-    --foreground: 0 0% 96%;
-    --card: 240 8% 9%;
-    --card-foreground: 0 0% 96%;
-    --popover: 240 8% 9%;
-    --popover-foreground: 0 0% 96%;
-    --primary: 263 85% 70%;
-    --primary-foreground: 240 10% 6%;
-    --secondary: 240 6% 15%;
-    --secondary-foreground: 0 0% 96%;
-    --muted: 240 6% 15%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 263 30% 18%;
-    --accent-foreground: 263 85% 85%;
-    --destructive: 0 63% 45%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 18%;
-    --input: 240 6% 18%;
-    --ring: 263 85% 70%;
+    --background: var(--papel);
+    --foreground: var(--marinho);
+    --card: 0 0% 100%;
+    --card-foreground: var(--marinho);
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--marinho);
+    --primary: var(--marinho);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--ceu);
+    --secondary-foreground: var(--marinho);
+    --muted: 228 30% 94%;
+    --muted-foreground: 221 18% 38%;
+    --accent: var(--rosa-claro);
+    --accent-foreground: var(--marinho);
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 225 25% 87%;
+    --input: 225 25% 87%;
+    --ring: var(--marinho);
+    --radius: 0.75rem;
   }
 }
 
@@ -58,7 +51,12 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-bold;
   }
   section[id] {
     scroll-margin-top: 5rem;

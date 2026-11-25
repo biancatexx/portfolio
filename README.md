@@ -13,13 +13,14 @@ npm run preview  # serve o build
 
 ## Onde editar
 
-- **Conteúdo** (nome, sobre, experiências, formação, competências, projetos, links): `src/data/profile.ts`. Os trechos com `[EDITAR]` são exemplos.
-- **Cores** (tema claro e escuro): variáveis em `src/index.css`.
+- **Conteúdo** (textos, serviços, trajetória, certificações, projetos, contato): `src/data/profile.ts`. Os trechos com `[EDITAR]` ainda precisam ser preenchidos.
+- **Cores da marca**: variáveis em `src/index.css` (marinho, céu, rosa, rosa claro, papel). No Tailwind: `bg-marinho`, `bg-ceu`, `bg-rosa`, `bg-rosa-claro`, `bg-papel`.
+- **Fontes**: Bricolage Grotesque Bold (títulos, classe `font-display`) e DM Sans (textos), carregadas em `index.html`.
+- **Logo**: `src/components/logo.tsx`. Sempre uma só cor: marinho em fundo claro, branco em fundo escuro.
 - **Componentes de UI** (shadcn/ui): `src/components/ui/`. Para adicionar mais: `npx shadcn@latest add <componente>`.
-- **Foto**: coloque em `public/` e troque o bloco de iniciais em `src/components/sections/hero.tsx`.
 
 ## Páginas
 
-- `/` — início, sobre, experiência, projetos em destaque e contato
-- `/projetos` — todos os projetos com filtro por tecnologia
+- `/` — apresentação, serviços, projetos (quando houver), trajetória e contato
+- `/projetos` — todos os projetos com filtro por tag
 - `/projetos/:slug` — detalhe de um projeto

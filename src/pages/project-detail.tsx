@@ -32,7 +32,7 @@ export default function ProjectDetail() {
           ))}
         </div>
 
-        <div className="my-10 aspect-video rounded-lg border bg-gradient-to-br from-primary/20 via-accent to-secondary" />
+        <div className="my-10 aspect-video rounded-lg border bg-secondary" />
 
         <p className="whitespace-pre-line text-lg leading-relaxed">{project.description}</p>
 
