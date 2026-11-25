@@ -14,14 +14,30 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
   return (
     <Link to={`/projetos/${project.slug}`} className="group block h-full">
       <Card className="flex h-full flex-col overflow-hidden transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-marinho">
-        <div className={cn("relative aspect-[4/3] overflow-hidden", covers[index % covers.length])}>
-          <div className="absolute inset-0 flex items-end justify-between p-6 transition-transform duration-500 group-hover:scale-105">
-            <span className="font-display text-6xl font-bold leading-none opacity-90">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <LogoMark className="h-12 opacity-90" />
+        {project.cover ? (
+          <div className="relative aspect-[4/3] overflow-hidden border-b bg-ceu">
+            <img
+              src={project.cover}
+              alt={project.title}
+              className="h-full w-full object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            {project.caseStudy && (
+              <span className="absolute left-4 top-4 rounded-full bg-rosa-claro px-3 py-1 text-xs font-bold text-marinho">
+                Estudo de caso
+              </span>
+            )}
           </div>
-        </div>
+        ) : (
+          <div className={cn("relative aspect-[4/3] overflow-hidden", covers[index % covers.length])}>
+            <div className="absolute inset-0 flex items-end justify-between p-6 transition-transform duration-500 group-hover:scale-105">
+              <span className="font-display text-6xl font-bold leading-none opacity-90">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <LogoMark className="h-12 opacity-90" />
+            </div>
+          </div>
+        )}
         <CardHeader>
           <CardTitle className="flex items-start justify-between gap-2">
             {project.title}

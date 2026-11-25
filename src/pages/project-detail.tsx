@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 
+import { CaseStudyView } from "@/components/case-study/case-study-view";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/data/profile";
@@ -11,6 +12,7 @@ export default function ProjectDetail() {
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) return <NotFound />;
+  if (project.caseStudy) return <CaseStudyView project={{ ...project, caseStudy: project.caseStudy }} />;
 
   return (
     <article className="py-16">

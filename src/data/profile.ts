@@ -5,6 +5,8 @@
  * Tom de voz da marca: curiosa, clara (frases curtas, sem jargão) e inovadora (mostra o porquê).
  */
 
+import { aprender } from "./case-studies/aprender";
+
 export type SocialLink = {
   label: string;
   href: string;
@@ -40,6 +42,27 @@ export type Project = {
   tags: string[];
   link?: string;
   repo?: string;
+  /** Imagem da capa no card (opcional; sem ela, o card usa uma capa colorida). */
+  cover?: string;
+  /** Estudo de caso completo (opcional; sem ele, a página mostra só a descrição). */
+  caseStudy?: CaseStudy;
+};
+
+export type CaseStudy = {
+  client: string;
+  role: string;
+  period: string;
+  team: string;
+  platforms: string[];
+  stack: string[];
+  overview: string;
+  challenge: { intro: string; problems: { title: string; text: string; image?: string }[] };
+  process: { title: string; text: string }[];
+  solutions: { title: string; text: string; before?: string; after?: string; mobile?: boolean }[];
+  gallery: { src: string; caption: string }[];
+  results: { value: string; label: string }[];
+  extras: string[];
+  learnings: string[];
 };
 
 export const profile = {
@@ -149,12 +172,15 @@ export const certifications: Certification[] = [
 // [EDITAR] seus projetos (estes ainda são exemplos)
 export const projects: Project[] = [
   {
-    slug: "projeto-um",
-    title: "Projeto Um",
-    summary: "Uma frase curta explicando o que o projeto resolve.",
+    slug: "instituto-aprender",
+    title: "Instituto Aprender",
+    summary: "Redesign do site, do portal do aluno e do painel de uma escola de cursos online e presenciais.",
     description:
-      "Descrição completa do projeto: o problema, o que você fez, as decisões e o resultado alcançado.",
-    tags: ["UX", "Pesquisa"],
+      "Redesign completo da vitrine de cursos, do checkout, do portal do aluno e do painel administrativo, do protótipo ao código em produção.",
+    tags: ["UX/UI", "Redesign", "Design system", "Front-end"],
+    link: "https://www.educacionalaprender.com.br",
+    cover: "/projetos/aprender/depois-cursos.jpg",
+    caseStudy: aprender,
   },
   {
     slug: "projeto-dois",
